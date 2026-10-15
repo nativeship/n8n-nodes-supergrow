@@ -1,0 +1,59 @@
+{
+    "author": {
+        "email": "hello@nativeship.io",
+        "name": "Administrator"
+    },
+    "description": "Supergrow helps creators and teams create, schedule, publish, and analyze LinkedIn content",
+    "devDependencies": {
+        "@n8n/node-cli": "0.41.2",
+        "@types/node": "22.15.29",
+        "eslint": "9.29.0",
+        "prettier": "3.6.2",
+        "typescript": "5.9.3"
+    },
+    "engines": {
+        "node": "\u003e=22.22.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "homepage": "https://external-api.supergrow.ai/api/v1/external/api-doc/openapi",
+    "keywords": [
+        "n8n-community-node-package",
+        "nativeship",
+        "nativeship-nodes",
+        "n8n",
+        "supergrow",
+        "n8n-node",
+        "linkedin-content",
+        "linkedin-scheduling",
+        "linkedin-analytics",
+        "content-management"
+    ],
+    "license": "MIT",
+    "n8n": {
+        "credentials": [
+            "dist/credentials/SupergrowApiKeyAuthApi.credentials.js",
+            "dist/credentials/SupergrowBearerAuthApi.credentials.js"
+        ],
+        "n8nNodesApiVersion": 1,
+        "nodes": [
+            "dist/nodes/Supergrow/Supergrow.node.js"
+        ],
+        "strict": true
+    },
+    "name": "@nativeship/n8n-nodes-supergrow",
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix"
+    },
+    "version": "1.0.0"
+}

@@ -1,0 +1,5892 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "operationId": "getAnalyticsFollowers",
+      "method": "GET",
+      "path": "/analytics/followers",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "period",
+          "inputName": "period",
+          "sample": "last_7_days",
+          "default": "last_7_days",
+          "enum": [
+            "last_7_days",
+            "last_30_days",
+            "current_month",
+            "previous_month"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "start_date",
+          "inputName": "start_date",
+          "sample": "value/id",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "end_date",
+          "inputName": "end_date",
+          "sample": "value/id",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "current_count",
+            "type": "integer"
+          },
+          {
+            "name": "trend",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "current_count",
+          "trend"
+        ]
+      },
+      "errors": [
+        {
+          "status": "422",
+          "title": "No LinkedIn account connected"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getAnalyticsFollowers",
+        "method": "GET",
+        "path": "/analytics/followers",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/analytics/followers",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "period",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start_date",
+              "source": "additionalFields"
+            },
+            {
+              "name": "end_date",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "current_count",
+              "type": "integer"
+            },
+            {
+              "name": "trend",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "current_count",
+            "trend"
+          ]
+        },
+        "errors": [
+          {
+            "status": "422",
+            "title": "No LinkedIn account connected"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getAnalyticsMetrics",
+      "method": "GET",
+      "path": "/analytics/metrics",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "metric",
+          "inputName": "metric",
+          "sample": "IMPRESSION",
+          "default": "IMPRESSION",
+          "enum": [
+            "IMPRESSION",
+            "MEMBERS_REACHED",
+            "RESHARE",
+            "REACTION",
+            "COMMENT"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "period",
+          "inputName": "period",
+          "sample": "last_7_days",
+          "default": "last_7_days",
+          "enum": [
+            "last_7_days",
+            "last_30_days",
+            "current_month",
+            "previous_month"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "start_date",
+          "inputName": "start_date",
+          "sample": "value/id",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "end_date",
+          "inputName": "end_date",
+          "sample": "value/id",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "metric_type",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "metric_type"
+        ]
+      },
+      "errors": [
+        {
+          "status": "422",
+          "title": "No LinkedIn account connected or invalid metric"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getAnalyticsMetrics",
+        "method": "GET",
+        "path": "/analytics/metrics",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/analytics/metrics",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "metric",
+              "source": "additionalFields"
+            },
+            {
+              "name": "period",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start_date",
+              "source": "additionalFields"
+            },
+            {
+              "name": "end_date",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "metric_type",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "metric_type"
+          ]
+        },
+        "errors": [
+          {
+            "status": "422",
+            "title": "No LinkedIn account connected or invalid metric"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getAnalyticsWeeklyReports",
+      "method": "GET",
+      "path": "/analytics/weekly-reports",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "limit",
+          "inputName": "limit",
+          "sample": 12,
+          "default": 12,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "target_type",
+          "inputName": "target_type",
+          "sample": "personal",
+          "default": "personal",
+          "enum": [
+            "personal",
+            "company_page",
+            "all"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "weekly_reports",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "weekly_reports"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getAnalyticsWeeklyReports",
+        "method": "GET",
+        "path": "/analytics/weekly-reports",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/analytics/weekly-reports",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "limit",
+              "source": "additionalFields"
+            },
+            {
+              "name": "target_type",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "weekly_reports",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "weekly_reports"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getCalendarMonthly",
+      "method": "GET",
+      "path": "/calendar/monthly",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "offset",
+          "inputName": "offset",
+          "sample": 0,
+          "default": 0,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "calendar",
+            "type": "object"
+          },
+          {
+            "name": "timezone",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "calendar",
+          "timezone"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getCalendarMonthly",
+        "method": "GET",
+        "path": "/calendar/monthly",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/calendar/monthly",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "offset",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "calendar",
+              "type": "object"
+            },
+            {
+              "name": "timezone",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "calendar",
+            "timezone"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getCalendarWeekly",
+      "method": "GET",
+      "path": "/calendar/weekly",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "offset",
+          "inputName": "offset",
+          "sample": 0,
+          "default": 0,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "calendar",
+            "type": "object"
+          },
+          {
+            "name": "timezone",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "calendar",
+          "timezone"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getCalendarWeekly",
+        "method": "GET",
+        "path": "/calendar/weekly",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/calendar/weekly",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "offset",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "calendar",
+              "type": "object"
+            },
+            {
+              "name": "timezone",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "calendar",
+            "timezone"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getCompanyPages",
+      "method": "GET",
+      "path": "/company-pages",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "company_pages",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "company_pages"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getCompanyPages",
+        "method": "GET",
+        "path": "/company-pages",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/company-pages",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "company_pages",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "company_pages"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getContentDna",
+      "method": "GET",
+      "path": "/content-dna",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "content_dna",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "content_dna"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getContentDna",
+        "method": "GET",
+        "path": "/content-dna",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/content-dna",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "content_dna",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "content_dna"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postContentDnaRegenerate",
+      "method": "POST",
+      "path": "/content-dna/regenerate",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "content_dna",
+            "type": "object"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "content_dna",
+          "message"
+        ]
+      },
+      "errors": [
+        {
+          "status": "409",
+          "title": "Content DNA regeneration is already in progress"
+        },
+        {
+          "status": "422",
+          "title": "Insufficient published history without a profile URL, invalid URL, or ambiguous member account"
+        },
+        {
+          "status": "503",
+          "title": "Failed to enqueue regeneration; the request claim has been released"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postContentDnaRegenerate",
+        "method": "POST",
+        "path": "/content-dna/regenerate",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/content-dna/regenerate",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "content_dna",
+              "type": "object"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "content_dna",
+            "message"
+          ]
+        },
+        "errors": [
+          {
+            "status": "409",
+            "title": "Content DNA regeneration is already in progress"
+          },
+          {
+            "status": "422",
+            "title": "Insufficient published history without a profile URL, invalid URL, or ambiguous member account"
+          },
+          {
+            "status": "503",
+            "title": "Failed to enqueue regeneration; the request claim has been released"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postExtract",
+      "method": "POST",
+      "path": "/extract",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "https://local-api.native-ship.invalid/value",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "text",
+          "url"
+        ]
+      },
+      "errors": [
+        {
+          "status": "429",
+          "title": "Daily extraction limit reached"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postExtract",
+        "method": "POST",
+        "path": "/extract",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/extract",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "url",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "text",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "text",
+            "url"
+          ]
+        },
+        "errors": [
+          {
+            "status": "429",
+            "title": "Daily extraction limit reached"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postExtractAudio",
+      "method": "POST",
+      "path": "/extract/audio",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "https://local-api.native-ship.invalid/value",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "text",
+          "url"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postExtractAudio",
+        "method": "POST",
+        "path": "/extract/audio",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/extract/audio",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "url",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "text",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "text",
+            "url"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postExtractPdf",
+      "method": "POST",
+      "path": "/extract/pdf",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "https://local-api.native-ship.invalid/value",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "text",
+          "url"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postExtractPdf",
+        "method": "POST",
+        "path": "/extract/pdf",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/extract/pdf",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "url",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "text",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "text",
+            "url"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postExtractYoutube",
+      "method": "POST",
+      "path": "/extract/youtube",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "https://local-api.native-ship.invalid/value",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "text",
+          "url"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postExtractYoutube",
+        "method": "POST",
+        "path": "/extract/youtube",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/extract/youtube",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "url",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "text",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "text",
+            "url"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getKanban",
+      "method": "GET",
+      "path": "/kanban",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 1,
+          "default": 1,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "per_page",
+          "inputName": "per_page",
+          "sample": 10,
+          "default": 10,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getKanban",
+        "method": "GET",
+        "path": "/kanban",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/kanban",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "page",
+              "source": "additionalFields"
+            },
+            {
+              "name": "per_page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getKanbanColumn",
+      "method": "GET",
+      "path": "/kanban/column",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "status",
+          "inputName": "status",
+          "sample": "draft",
+          "enum": [
+            "draft",
+            "under_review",
+            "approved",
+            "needs_changes",
+            "scheduled",
+            "published"
+          ],
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 1,
+          "default": 1,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "per_page",
+          "inputName": "per_page",
+          "sample": 10,
+          "default": 10,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getKanbanColumn",
+        "method": "GET",
+        "path": "/kanban/column",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/kanban/column",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "status",
+              "source": "parameter"
+            },
+            {
+              "name": "page",
+              "source": "additionalFields"
+            },
+            {
+              "name": "per_page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deleteKnowledgeBaseId",
+      "method": "DELETE",
+      "path": "/knowledge-base/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "status"
+        ]
+      },
+      "errors": [
+        {
+          "status": "404",
+          "title": "Item not found"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deleteKnowledgeBaseId",
+        "method": "DELETE",
+        "path": "/knowledge-base/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "DELETE",
+          "url": "=/knowledge-base/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "status"
+          ]
+        },
+        "errors": [
+          {
+            "status": "404",
+            "title": "Item not found"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getKnowledgeBase",
+      "method": "GET",
+      "path": "/knowledge-base",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "source_type",
+          "inputName": "source_type",
+          "sample": "text",
+          "enum": [
+            "text",
+            "website",
+            "pdf",
+            "document",
+            "youtube",
+            "voice"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "status",
+          "inputName": "status",
+          "sample": "draft",
+          "enum": [
+            "draft",
+            "processing",
+            "ready",
+            "failed"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 1,
+          "default": 1,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "per_page",
+          "inputName": "per_page",
+          "sample": 20,
+          "default": 20,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "knowledge_base_items",
+            "type": "array"
+          },
+          {
+            "name": "page",
+            "type": "integer"
+          },
+          {
+            "name": "per_page",
+            "type": "integer"
+          },
+          {
+            "name": "total_count",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "knowledge_base_items",
+          "page",
+          "per_page",
+          "total_count"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getKnowledgeBase",
+        "method": "GET",
+        "path": "/knowledge-base",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/knowledge-base",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "source_type",
+              "source": "additionalFields"
+            },
+            {
+              "name": "status",
+              "source": "additionalFields"
+            },
+            {
+              "name": "page",
+              "source": "additionalFields"
+            },
+            {
+              "name": "per_page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "knowledge_base_items",
+              "type": "array"
+            },
+            {
+              "name": "page",
+              "type": "integer"
+            },
+            {
+              "name": "per_page",
+              "type": "integer"
+            },
+            {
+              "name": "total_count",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "knowledge_base_items",
+            "page",
+            "per_page",
+            "total_count"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getKnowledgeBaseId",
+      "method": "GET",
+      "path": "/knowledge-base/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "knowledge_base_item",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "knowledge_base_item"
+        ]
+      },
+      "errors": [
+        {
+          "status": "404",
+          "title": "Item not found or belongs to a different workspace"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getKnowledgeBaseId",
+        "method": "GET",
+        "path": "/knowledge-base/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/knowledge-base/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "knowledge_base_item",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "knowledge_base_item"
+          ]
+        },
+        "errors": [
+          {
+            "status": "404",
+            "title": "Item not found or belongs to a different workspace"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postKnowledgeBaseIngest",
+      "method": "POST",
+      "path": "/knowledge-base/ingest",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "content",
+            "inputName": "content",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "title",
+            "inputName": "title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "knowledge_base_item",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "knowledge_base_item"
+        ]
+      },
+      "errors": [
+        {
+          "status": "401",
+          "title": "Unauthorized or workspace access denied"
+        },
+        {
+          "status": "422",
+          "title": "content parameter missing or ingestion failed"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postKnowledgeBaseIngest",
+        "method": "POST",
+        "path": "/knowledge-base/ingest",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/knowledge-base/ingest",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "content",
+              "source": "parameter"
+            },
+            {
+              "name": "title",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "knowledge_base_item",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "knowledge_base_item"
+          ]
+        },
+        "errors": [
+          {
+            "status": "401",
+            "title": "Unauthorized or workspace access denied"
+          },
+          {
+            "status": "422",
+            "title": "content parameter missing or ingestion failed"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postKnowledgeBaseSearch",
+      "method": "POST",
+      "path": "/knowledge-base/search",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "include_insights",
+            "inputName": "include_insights",
+            "sample": true,
+            "default": true,
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "inputName": "limit",
+            "sample": 10,
+            "default": 10,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "query",
+            "inputName": "query",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "similarity_threshold",
+            "inputName": "similarity_threshold",
+            "sample": 2.5,
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "source_type",
+            "inputName": "source_type",
+            "sample": "text",
+            "enum": [
+              "text",
+              "website",
+              "pdf",
+              "document",
+              "youtube",
+              "voice"
+            ],
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "query",
+            "type": "string"
+          },
+          {
+            "name": "results",
+            "type": "array"
+          },
+          {
+            "name": "total_results",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "query",
+          "results",
+          "total_results"
+        ]
+      },
+      "errors": [
+        {
+          "status": "401",
+          "title": "Unauthorized or workspace access denied"
+        },
+        {
+          "status": "422",
+          "title": "query parameter missing"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postKnowledgeBaseSearch",
+        "method": "POST",
+        "path": "/knowledge-base/search",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/knowledge-base/search",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "include_insights",
+              "source": "additionalFields"
+            },
+            {
+              "name": "limit",
+              "source": "additionalFields"
+            },
+            {
+              "name": "query",
+              "source": "parameter"
+            },
+            {
+              "name": "similarity_threshold",
+              "source": "additionalFields"
+            },
+            {
+              "name": "source_type",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "query",
+              "type": "string"
+            },
+            {
+              "name": "results",
+              "type": "array"
+            },
+            {
+              "name": "total_results",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "query",
+            "results",
+            "total_results"
+          ]
+        },
+        "errors": [
+          {
+            "status": "401",
+            "title": "Unauthorized or workspace access denied"
+          },
+          {
+            "status": "422",
+            "title": "query parameter missing"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getLinkedInAccounts",
+      "method": "GET",
+      "path": "/linked-in-accounts",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "linked_in_accounts",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "linked_in_accounts"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getLinkedInAccounts",
+        "method": "GET",
+        "path": "/linked-in-accounts",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/linked-in-accounts",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "linked_in_accounts",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "linked_in_accounts"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getMedia",
+      "method": "GET",
+      "path": "/media",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "media_type",
+          "inputName": "media_type",
+          "sample": "image",
+          "enum": [
+            "image",
+            "video",
+            "audio",
+            "document"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 1,
+          "default": 1,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "per_page",
+          "inputName": "per_page",
+          "sample": 20,
+          "default": 20,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "media_items",
+            "type": "array"
+          },
+          {
+            "name": "pagination",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "media_items",
+          "pagination"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getMedia",
+        "method": "GET",
+        "path": "/media",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/media",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "media_type",
+              "source": "additionalFields"
+            },
+            {
+              "name": "page",
+              "source": "additionalFields"
+            },
+            {
+              "name": "per_page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "media_items",
+              "type": "array"
+            },
+            {
+              "name": "pagination",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "media_items",
+            "pagination"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getMediaId",
+      "method": "GET",
+      "path": "/media/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "media_item",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "media_item"
+        ]
+      },
+      "errors": [
+        {
+          "status": "404",
+          "title": "Media item not found"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getMediaId",
+        "method": "GET",
+        "path": "/media/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/media/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "media_item",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "media_item"
+          ]
+        },
+        "errors": [
+          {
+            "status": "404",
+            "title": "Media item not found"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postMedia",
+      "method": "POST",
+      "path": "/media",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "content_type",
+            "inputName": "content_type",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "file_name",
+            "inputName": "file_name",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "workspace_id",
+            "inputName": "workspace_id",
+            "sample": "00000000-0000-4000-8000-000000000000",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "media_item",
+            "type": "object"
+          },
+          {
+            "name": "upload",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "media_item",
+          "upload"
+        ]
+      },
+      "errors": [
+        {
+          "status": "401",
+          "title": "Missing/invalid credential, or the authenticated user does not have access to this workspace"
+        },
+        {
+          "status": "403",
+          "title": "Returned if the account is blocked or the caller's plan is not paid. Paid-plan errors include `PAID_PLAN_REQUIRED`."
+        },
+        {
+          "status": "404",
+          "title": "Workspace not found"
+        },
+        {
+          "status": "422",
+          "title": "Returned for missing fields, storage errors, or unsupported image MIME types. Images must be JPEG, PNG, or GIF."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postMedia",
+        "method": "POST",
+        "path": "/media",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/media",
+          "query": [],
+          "body": [
+            {
+              "name": "content_type",
+              "source": "parameter"
+            },
+            {
+              "name": "file_name",
+              "source": "parameter"
+            },
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "media_item",
+              "type": "object"
+            },
+            {
+              "name": "upload",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "media_item",
+            "upload"
+          ]
+        },
+        "errors": [
+          {
+            "status": "401",
+            "title": "Missing/invalid credential, or the authenticated user does not have access to this workspace"
+          },
+          {
+            "status": "403",
+            "title": "Returned if the account is blocked or the caller's plan is not paid. Paid-plan errors include `PAID_PLAN_REQUIRED`."
+          },
+          {
+            "status": "404",
+            "title": "Workspace not found"
+          },
+          {
+            "status": "422",
+            "title": "Returned for missing fields, storage errors, or unsupported image MIME types. Images must be JPEG, PNG, or GIF."
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postMediaIdConfirm",
+      "method": "POST",
+      "path": "/media/{id}/confirm",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "workspace_id",
+            "inputName": "workspace_id",
+            "sample": "00000000-0000-4000-8000-000000000000",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "media_item",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "media_item"
+        ]
+      },
+      "errors": [
+        {
+          "status": "401",
+          "title": "Missing/invalid credential, or the authenticated user does not have access to this workspace"
+        },
+        {
+          "status": "403",
+          "title": "Returned if the account is blocked or the caller's plan is not paid. Paid-plan errors include `PAID_PLAN_REQUIRED`."
+        },
+        {
+          "status": "404",
+          "title": "Media item not found in this workspace"
+        },
+        {
+          "status": "422",
+          "title": "Returned if the upload is missing from storage (the item remains pending) or image bytes use an unsupported format. Unsupported images and their media items are deleted; start a new upload using JPEG, PNG, or GIF."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postMediaIdConfirm",
+        "method": "POST",
+        "path": "/media/{id}/confirm",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/media/{{$parameter[\"id\"]}}/confirm",
+          "query": [],
+          "body": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "media_item",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "media_item"
+          ]
+        },
+        "errors": [
+          {
+            "status": "401",
+            "title": "Missing/invalid credential, or the authenticated user does not have access to this workspace"
+          },
+          {
+            "status": "403",
+            "title": "Returned if the account is blocked or the caller's plan is not paid. Paid-plan errors include `PAID_PLAN_REQUIRED`."
+          },
+          {
+            "status": "404",
+            "title": "Media item not found in this workspace"
+          },
+          {
+            "status": "422",
+            "title": "Returned if the upload is missing from storage (the item remains pending) or image bytes use an unsupported format. Unsupported images and their media items are deleted; start a new upload using JPEG, PNG, or GIF."
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostScore",
+      "method": "POST",
+      "path": "/post-score",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "text",
+            "inputName": "text",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "analysis",
+            "type": "object"
+          },
+          {
+            "name": "score",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "analysis",
+          "score"
+        ]
+      },
+      "errors": [
+        {
+          "status": "422",
+          "title": "Invalid input or scoring failed"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postPostScore",
+        "method": "POST",
+        "path": "/post-score",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/post-score",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "text",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "analysis",
+              "type": "object"
+            },
+            {
+              "name": "score",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "analysis",
+            "score"
+          ]
+        },
+        "errors": [
+          {
+            "status": "422",
+            "title": "Invalid input or scoring failed"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deletePostsId",
+      "method": "DELETE",
+      "path": "/posts/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "deletePostsId",
+        "method": "DELETE",
+        "path": "/posts/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "DELETE",
+          "url": "=/posts/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deletePostsIdCommentsCommentId",
+      "method": "DELETE",
+      "path": "/posts/{id}/comments/{comment_id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "comment_id",
+          "inputName": "comment_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "404",
+          "title": "Comment not found"
+        },
+        {
+          "status": "422",
+          "title": "Cannot delete comments on a published post"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deletePostsIdCommentsCommentId",
+        "method": "DELETE",
+        "path": "/posts/{id}/comments/{comment_id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "DELETE",
+          "url": "=/posts/{{$parameter[\"id\"]}}/comments/{{$parameter[\"comment_id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "404",
+            "title": "Comment not found"
+          },
+          {
+            "status": "422",
+            "title": "Cannot delete comments on a published post"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deletePostsIdPublicLink",
+      "method": "DELETE",
+      "path": "/posts/{id}/public-link",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "deletePostsIdPublicLink",
+        "method": "DELETE",
+        "path": "/posts/{id}/public-link",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "DELETE",
+          "url": "=/posts/{{$parameter[\"id\"]}}/public-link",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getPosts",
+      "method": "GET",
+      "path": "/posts",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "status",
+          "inputName": "status",
+          "sample": "draft",
+          "enum": [
+            "draft",
+            "scheduled",
+            "published",
+            "failed",
+            "all"
+          ],
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "tag_ids",
+          "inputName": "tag_ids",
+          "sample": "value/id",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "posts",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "posts"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/posts",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            },
+            {
+              "name": "status",
+              "source": "parameter"
+            },
+            {
+              "name": "tag_ids",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "posts",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "posts"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getPostsId",
+      "method": "GET",
+      "path": "/posts/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "post",
+            "type": "object"
+          }
+        ],
+        "simplifiedFields": [
+          "post"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getPostsId",
+        "method": "GET",
+        "path": "/posts/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/posts/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "post",
+              "type": "object"
+            }
+          ],
+          "simplifiedFields": [
+            "post"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getPostsIdComments",
+      "method": "GET",
+      "path": "/posts/{id}/comments",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "comments",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "comments"
+        ]
+      },
+      "errors": [
+        {
+          "status": "404",
+          "title": "Post not found"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getPostsIdComments",
+        "method": "GET",
+        "path": "/posts/{id}/comments",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/posts/{{$parameter[\"id\"]}}/comments",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "comments",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "comments"
+          ]
+        },
+        "errors": [
+          {
+            "status": "404",
+            "title": "Post not found"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPosts",
+      "method": "POST",
+      "path": "/posts",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "carousel_title",
+            "inputName": "carousel_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "file_url",
+            "inputName": "file_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "image_urls",
+            "inputName": "image_urls",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "linked_in_company_page_id",
+            "inputName": "linked_in_company_page_id",
+            "sample": "00000000-0000-4000-8000-000000000000",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "media_ids",
+            "inputName": "media_ids",
+            "sample": [
+              "00000000-0000-4000-8000-000000000000"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "text",
+            "inputName": "text",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "video_thumbnail_url",
+            "inputName": "video_thumbnail_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "video_title",
+            "inputName": "video_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "video_url",
+            "inputName": "video_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "post",
+            "type": "object"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "post",
+          "status"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postPosts",
+        "method": "POST",
+        "path": "/posts",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "carousel_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "file_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "image_urls",
+              "source": "additionalFields"
+            },
+            {
+              "name": "linked_in_company_page_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "media_ids",
+              "source": "additionalFields"
+            },
+            {
+              "name": "text",
+              "source": "parameter"
+            },
+            {
+              "name": "video_thumbnail_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "video_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "video_url",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "post",
+              "type": "object"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "post",
+            "status"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": [
+          "advanced parameter image_urls",
+          "advanced parameter media_ids"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsIdComments",
+      "method": "POST",
+      "path": "/posts/{id}/comments",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "comments",
+            "inputName": "comments",
+            "sample": [
+              {
+                "post_after_time_unit": "minutes",
+                "post_after_time_unit_count": 5,
+                "text": "value/id"
+              }
+            ],
+            "type": "array",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "comments",
+            "type": "array"
+          },
+          {
+            "name": "errors",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "comments",
+          "errors"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Cannot add comments to a published post"
+        },
+        {
+          "status": "404",
+          "title": "Post not found"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postPostsIdComments",
+        "method": "POST",
+        "path": "/posts/{id}/comments",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/{{$parameter[\"id\"]}}/comments",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "comments",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "comments",
+              "type": "array"
+            },
+            {
+              "name": "errors",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "comments",
+            "errors"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Cannot add comments to a published post"
+          },
+          {
+            "status": "404",
+            "title": "Post not found"
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter comments"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsIdPublicLink",
+      "method": "POST",
+      "path": "/posts/{id}/public-link",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "public_url",
+            "type": "string",
+            "format": "uri"
+          }
+        ],
+        "simplifiedFields": [
+          "public_url"
+        ]
+      },
+      "errors": [
+        {
+          "status": "404",
+          "title": "Post not found"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postPostsIdPublicLink",
+        "method": "POST",
+        "path": "/posts/{id}/public-link",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/{{$parameter[\"id\"]}}/public-link",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "public_url",
+              "type": "string",
+              "format": "uri"
+            }
+          ],
+          "simplifiedFields": [
+            "public_url"
+          ]
+        },
+        "errors": [
+          {
+            "status": "404",
+            "title": "Post not found"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsIdPublish",
+      "method": "POST",
+      "path": "/posts/{id}/publish",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postPostsIdPublish",
+        "method": "POST",
+        "path": "/posts/{id}/publish",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/{{$parameter[\"id\"]}}/publish",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsIdSchedule",
+      "method": "POST",
+      "path": "/posts/{id}/schedule",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "day_of_the_month",
+            "inputName": "day_of_the_month",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "day_of_week",
+            "inputName": "day_of_week",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "hour",
+            "inputName": "hour",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "minute",
+            "inputName": "minute",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "month",
+            "inputName": "month",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "year",
+            "inputName": "year",
+            "sample": 2,
+            "type": "integer",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postPostsIdSchedule",
+        "method": "POST",
+        "path": "/posts/{id}/schedule",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/{{$parameter[\"id\"]}}/schedule",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "day_of_the_month",
+              "source": "additionalFields"
+            },
+            {
+              "name": "day_of_week",
+              "source": "additionalFields"
+            },
+            {
+              "name": "hour",
+              "source": "additionalFields"
+            },
+            {
+              "name": "minute",
+              "source": "additionalFields"
+            },
+            {
+              "name": "month",
+              "source": "additionalFields"
+            },
+            {
+              "name": "year",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsIdUnschedule",
+      "method": "POST",
+      "path": "/posts/{id}/unschedule",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postPostsIdUnschedule",
+        "method": "POST",
+        "path": "/posts/{id}/unschedule",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/{{$parameter[\"id\"]}}/unschedule",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postPostsQueue",
+      "method": "POST",
+      "path": "/posts/queue",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "carousel_title",
+            "inputName": "carousel_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "file_url",
+            "inputName": "file_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "image_urls",
+            "inputName": "image_urls",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "linked_in_company_page_id",
+            "inputName": "linked_in_company_page_id",
+            "sample": "00000000-0000-4000-8000-000000000000",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "media_ids",
+            "inputName": "media_ids",
+            "sample": [
+              "00000000-0000-4000-8000-000000000000"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "text",
+            "inputName": "text",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "video_title",
+            "inputName": "video_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "video_url",
+            "inputName": "video_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "postPostsQueue",
+        "method": "POST",
+        "path": "/posts/queue",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/posts/queue",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "carousel_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "file_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "image_urls",
+              "source": "additionalFields"
+            },
+            {
+              "name": "linked_in_company_page_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "media_ids",
+              "source": "additionalFields"
+            },
+            {
+              "name": "text",
+              "source": "parameter"
+            },
+            {
+              "name": "video_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "video_url",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": [
+          "advanced parameter image_urls",
+          "advanced parameter media_ids"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "putPostsId",
+      "method": "PUT",
+      "path": "/posts/{id}",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "carousel_title",
+            "inputName": "carousel_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "file_url",
+            "inputName": "file_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "image_urls",
+            "inputName": "image_urls",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "media_ids",
+            "inputName": "media_ids",
+            "sample": [
+              "00000000-0000-4000-8000-000000000000"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "text",
+            "inputName": "text",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "video_thumbnail_url",
+            "inputName": "video_thumbnail_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "video_title",
+            "inputName": "video_title",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "video_url",
+            "inputName": "video_url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "putPostsId",
+        "method": "PUT",
+        "path": "/posts/{id}",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "PUT",
+          "url": "=/posts/{{$parameter[\"id\"]}}",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "carousel_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "file_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "image_urls",
+              "source": "additionalFields"
+            },
+            {
+              "name": "media_ids",
+              "source": "additionalFields"
+            },
+            {
+              "name": "text",
+              "source": "parameter"
+            },
+            {
+              "name": "video_thumbnail_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "video_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "video_url",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": [
+          "advanced parameter image_urls",
+          "advanced parameter media_ids"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postQuestionsFromText",
+      "method": "POST",
+      "path": "/questions/from-text",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "text",
+            "inputName": "text",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "questions",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "questions"
+        ]
+      },
+      "errors": [
+        {
+          "status": "422",
+          "title": "Missing text or generation failed"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postQuestionsFromText",
+        "method": "POST",
+        "path": "/questions/from-text",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/questions/from-text",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "text",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "questions",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "questions"
+          ]
+        },
+        "errors": [
+          {
+            "status": "422",
+            "title": "Missing text or generation failed"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "postQuestionsFromTopic",
+      "method": "POST",
+      "path": "/questions/from-topic",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "workspace_id",
+          "inputName": "workspace_id",
+          "sample": "00000000-0000-4000-8000-000000000000",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "topic",
+            "inputName": "topic",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "questions",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "questions"
+        ]
+      },
+      "errors": [
+        {
+          "status": "422",
+          "title": "Missing topic or generation failed"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "postQuestionsFromTopic",
+        "method": "POST",
+        "path": "/questions/from-topic",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "POST",
+          "url": "=/questions/from-topic",
+          "query": [
+            {
+              "name": "workspace_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [
+            {
+              "name": "topic",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "questions",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "questions"
+          ]
+        },
+        "errors": [
+          {
+            "status": "422",
+            "title": "Missing topic or generation failed"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getWorkspaces",
+      "method": "GET",
+      "path": "/workspaces",
+      "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        },
+        {
+          "schemes": [
+            "BearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "workspaces",
+            "type": "array"
+          }
+        ],
+        "simplifiedFields": [
+          "workspaces"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getWorkspaces",
+        "method": "GET",
+        "path": "/workspaces",
+        "serverId": "documentServer1HttpsExternalApiSupergrowAiApiV1External",
+        "request": {
+          "method": "GET",
+          "url": "=/workspaces",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          },
+          {
+            "schemes": [
+              "BearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "workspaces",
+              "type": "array"
+            }
+          ],
+          "simplifiedFields": [
+            "workspaces"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    }
+  ],
+  "triggerFixtures": []
+}
